@@ -1,0 +1,59 @@
+Genel olarak component'ler app klosörünün içerisinde tutulur.
+
+*** Components ***
+- Angular uygulamalarında component'ler uygulamanın mühim parçası olan merkezi yapılanmalardan biridir.
+
+- Genellikle Angular uygulamasında component'lerin görevi sayfa altyapıları olarak kullanılmalarıdır. Bunun dışında sayfa olarak kullanılan component'lerin alt component'leri olarakta kullanılabilmekte ve böylece partial mantığında sayfaları geliştirmemizede imkan verebilmektedirler.
+
+- Her component, kendi işlevselliğine  ve görünümüne odaklıdır ve diğer component'lerden bağımsız olarak çalışırlar.
+
+- Böylece; değiştirilmesi/onarılması/modifiye edilmesi gereken noktalar için sadece ilgili component üzerinde çalışmak yeterli olacaktır.
+
+- Component'ler, birbiriyle iletişim kurarak, büyük ve karmaşık uygulamaları oluşturmayı kolaylaştırır.
+
+- Component yapılanması; template, style, selector, component class ve metedata olmak üzere 5 adet bileşenden meydana geliyor diyebiliriz.
+
+** template **
+- Component'in görsel çalışmalarının yapıldığı parçasıdır.
+- İçerisinde HTML kodunun eşliğinde directive ve pipe gibi özel Angular elemanları ve Data Binding davranışları kullanılabilmektedir.
+- Component'in .html dosyasına karşılık gelmektedir ve component ile "templateUrl" field'ı üzerinden ilişkilendirilmektedir.
+- Eğer ki template işlemlerini fiziksel olarak ayrı bir dosya üzerinden gerçekleştirmek istemiyorsanız direkt .ts dosyası içerisinde 'template' field'ına karşılıkta çalışmalarınızı gerçekleştirebilirsiniz.
+- Yani templateUrl kullanacaksam çalışmalarım 'app.component.html' dosyasında olacaktır.
+- ts dosyasında template olarak kullanacaksam ise;
+@Component({ 
+template: `<p>merhaba</p>
+<hr>
+`}) şeklinde kullanmalıyım.
+
+*** Style ***
+- Component'in css, scss vs. gibi artık hangi style türü seçildiyse ilgili çalışmaların yapıldığı tasarım parçasıdır.
+- .css, .scss vs. gibi türüne özgü uzantılı dosyalarına karşılık gelmektedir ve component ile 'styleUrls' field'ı üzerinden ilişkilendirilmektedir.
+- İstenildiği taktirde 'styles' field'ı üzerinden de css'ler aşağıdaki tanımlanabilmektedir.
+@Component({
+    styles:['h1{background-color:red;}']
+})
+
+*** Component Class ***
+- Component'in merkezi ve esas unsurudur. Uzantısı .ts olan dosyadır.
+- Tüm JavaScript, TypeScript ve jQuery işlemleri bu parça üzerinde gerçekleştirilir ve component içerisinde kullanılacak değişkenlerle birlikte fonksiyonlar bu sınıf üzerinde tanımlanır.
+- Verilerin nasıl görüntüleneceği, fonksiyonların nasıl işleneceği vs. gibi işlevsellikler bu sınıf tarafından yönetilir.
+- Uygulamada iş mantığı gereği; business logic barındıran servisler 'Component Class' üzerinden çağırılırlar. Aynı şekilde API gibi dış servislere erişim sürecinin başlatılmasından da bu sınıf sorumludur.
+
+*** Selector ***
+- Component'in selector özelliği, ilgili component'in uygulamanın herhangi bir noktasında nasıl çağırılacağını tanımlayan bir referans özelliğidir.
+- Sadece html dosyalarında kullanılabilir.
+<app-root></app-root>
+- Uygulamada herhangi bir component'in HTML'inde farklı bir component'in selector'ı yukarıdaki gibi çağırılıyorsa eğer o selector'a karşılık gelen component compiler tarafından render edilecek ve üretilen çıktısı o noktaya basılmış olacak.
+
+** Component'lerin birbirlerini selector ile referans edebilmeleri için ya aynı modul'de olmaları gerekiyor ya da bulundukları modülden 'export' edilmiş olmaları gerekiyor.
+
+*** MetaData ***
+- Component'in nasıl yapılandırılacağını ve nasıl kullanılacağını tanımlayan bir decorator'dür.
+- Bu decorator ile ilgili component'in; şu ana kadar gördüğümüz selector, template, style bilgileri eşliğinde component'ler arası yönlendirme süreçlerindeki geçiş animasyonları(animations), component'in dışarıdan alabileceği değişkenler(inputs) yahut dışarıdan emit'lenecek event'ler(outputs) vs. tanımlanabilir.
+
+
+***!!!!***
+component oluşturmak için;
+- ng generate component [component name] ya da
+- ng g c [component name]
+** app klosörü içerisinde alt klosörlerde oluşturur.
