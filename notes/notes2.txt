@@ -1,0 +1,39 @@
+Angular Mimarisinin Temel Yapı Taşları Nelerdir? Genel Teorik İnceleyelim
+
+* Angular'ın çalışma mantığı özünde MVC pattern'a dayanmaktadır.
+* Böylece uygulamanın veri modeli, görüntüleme ve işleme/operasyon katmanlarını ayırmakta ve uygulama kodunu daha okunabilir ve düzenli hale getirerek geliştirme sürecini verimli kılmaktadır.
+
+*** Yapı Taşları ***
+
+- modules => Angular mimarisinde module yapılanması uygulama öğelerinin gruplandırılmasını sağlamaktadır. Böylece uygulama daha düzenli bir şekilde inşa edilebilir hale getirilmektedir.
+- Modüller, uygulamanın çeşitli parçalarını(components, service vs.) bir araya getirerek bir bütün olarak kullanılabilir kılmaktadırlar.
+- Modüller birbirlerini import etmedikleri taktirde, bir modüldeki parça diğer modül altındaki parçalar tarafından erişilemez!
+
+- components => Component'ler uygulamanın görüntüleme katmanını ifade eden ve veri modeliyle etkileşim kurarak kullanıcılara uygulamanın görsel kısmını sunan yapılardır.
+- Yapısal olarak birer HTML ve TypeScript dosyalarından oluşmaktadırlar.
+- Component'ler, veri modeliyle etkileşim kurabilmek için Data Binding özelliğini kullanmaktadırlar.
+- Ayrıca ihtiyaç duydukları servislerin instance'larını Dependency injection ile elde edebilirler.
+- Oratlama bir Angular uygulaması, birbiriyle etkileşimli bir dizi component barındırarak dinamik ve etkileşimli işlevsellik gösterebilmektedir.
+
+- Data Binding => Angular mimarisi, Data Binding özelliği sayesinde veri modeli ile template'ler arasında veri akışını dinamik bir şekilde sağlayabilmektedir.
+- Böylece uygulamadaki verisel değişiklikler otomatik olarak sayfalara yansıtılabilmektedir.
+- Angularda Data Binding çift yönlü çalışmaktadır. (Two Way Data Binding) yani veri modeli güncellendiği zaman template'te, template güncellendiği zaman ise veri modeline anında yansıtılmaktadır.
+
+- Dependency injection => Angular mimarisi, uygulamada mevcut olan ögeler arasındaki bağımlılıkları yönetebilmek için Dependency injection pattern'ını kullanmaktadır.
+
+- Directives => Directive'ler; HTML nesnelerinin davranışalrını ve görünümlerini yönetebilmemizi sağlayan özel etiketlerdir.
+
+- Decorators => Decorator'lar; TypeScript dilinin bir özelliğidir ve Angular tarafından kullanılmaktadır.
+- Decorator sayesinde bir class'a yahut herhangi bir class member'ına -metadata- ekleyebilmekteyiz. Böylece ilgili yapının davranışı hakkında bir öntanımda bulunmaktayız.
+- Misal olarak; bir class'ı @Component Decorator'ı ile işaretlersek eğer bir component, yok eğer @Injectable ile işaretlersek bir service olacağı anlamına gelmektedir.
+
+- Services => Angular'da genellikle dış servislerle(API-endpoint) iletişim kurmak, karmaşık iş operasyonlarını veya business logic'i yürütmek yahut component'ler arasında iletişim sağlayabilmek için kullanılan fiili yapılanmalardır.
+- Yani tüm operasyonel/fiili/kodlama gerektiren işlemler servislerde yapılmaktadır.
+
+- Templates => Template; component'lerin HTML kısmıdır. İçerisinde HTML kodları barındırabileceği gibi özel Angular elemanları, Directive'ler, pipe'lar vs. barındırabilir ve bunları işlevlerine göre çalıştırabilirler.
+
+- Guards => Angular uygulamasında route erişimlerinin izin kontrolleri Guard yapılanması üzerinden gerçekleştirilmektedir.
+- Sayfalar arası geçiş süreçlerinde ilgili kullanıcının erişimine izin verilip verilmeyeceğine dair karar veren yapılanmalardır.
+
+- pipes => verilerin görüntülenme süreçlerinde işlenmesine yönelik işlevsellik sağlayan yapılardır.
+- Mesela; bir verinin tarihsel yahut parasal biçime dönüştürülmesi pipe'lar sayesinde gerçekleştirilebilir.
