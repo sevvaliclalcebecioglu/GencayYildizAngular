@@ -1,0 +1,33 @@
+Angular Eğitimi #6 - Directive Nedir? Ne Amaçla Kullanılmaktadır? Hazır Directive'ler Nelerdir?
+
+*** Directive Nedir? ***
+- HTML elemanlarına ekstra özellikler ve davranışlar eklemek için kullanılan özel etiketlerdir.
+- Yani bir başka deyişle DOM nesnelerini manipüle etmemizi sağlayan özel yapılanmalardır.
+- Angular'da davranışlarına göre farklı işlevsellik gösteren hazır directive'ler mevcuttur. Bunların dışında kendimize özel directive'ler de oluşturabilmekteyiz.
+
+*** Built-in/Hazır/Ön Tanımlı Directive'ler Nelerdir?
+- ngFor
+- ngSwitch
+- ngIf
+- ngClass
+- ngStyle
+- ngModel
+- ngNonBindable
+
+*** ngFor Directive ***
+- HTML nesneleri üzerinde iterasyonel işlemler yapmak için kullanılan directive'dir.
+- Array'ler ile birlikte kullanılır. Kaç tane array varsa o kadar işlem yapar.
+- Veya index, first, last, even ve odd keyword'leri eşliğinde ngFor directive'ini daha da karmaşık kullanabilirsiniz.
+
+*** ngIf Directive ***
+- Verilen koşula göre HTML nesnelerinin görünürlüğünü kontrol etmek için kullanılan temel bir Angular directive'idir.
+
+*** ngSwitch Directive ***
+- Verilen koşula göre HTML nesnelerinin görünürlüğünü yahut içeriğini değiştirmek için kullanılan temel bir directive'dir.
+- ngSwitch directive'i, ngSwitchCase ve ngSwitchDefault direktifleriyle birlikte Kullanılmaktadır.
+
+*** ngClass Directive ***
+- HTML etiketlerinin class değerlerini dinamik olarak yönetebilmemizi sağlayan bir directive'dir.
+
+*** ngStyle Directive ***
+- HTML etiketlerinin style değerlerini dinamik olarak yönetebilmemizi sağlayan bir directive'dir.
