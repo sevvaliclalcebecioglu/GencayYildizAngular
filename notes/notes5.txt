@@ -1,0 +1,26 @@
+Angular Eğitimi #5 - Interpolation Syntax Nedir? Detaylıca İnceleyelim
+
+*Angular'da, Component Class'ı içerisindeki herhangi bir field yahut property'nin değerini {{....}} operatörü aracılığıyla HTML içerisinde kullanılmasına Text Interpolation, bu ifadeye ise Interpolation Syntax denmektedir.
+
+- Interpolation, One-Way(Tek Yönlü) Data Binding gerçekleştirmektedir.
+
+***Interpolation'da Neler Kullanılamaz?***
+- Interpolation, yapısal olarak sadece field veya property değerlerini okumak ve böylece Template'e yansıtmak için kullanılır. Bundan dolayı uygulamanın durumunu(state) değiştirebilecek herhangi bir işlem gerçekleştirememektedir.
+
+- Bu mantıkla işlem neticesinde state değişikliğine sebebiyet verebilecek aşağıdaki operatörler, keyword'ler ve işlemler Interpolation ile birlikte kullanılamaz;
+* Assing operatörleri (=, +=, -=)
+* new, typeof, instanceof vs. keyword'leri
+* ; operatörü
+* Arttırma(Increment) - Azaltma(Decrement) operatörleri (++, --)
+* Bitwise operatörler
+
+
+- Bunların dışında Interpolation'da iki değişkeni aritmetik işleme tabi tutabilir, string birleştirme yapabilir, Template referans'ı kullanabilir yahut herhangi bir fonksiyonu tetikleyebilirsiniz.
+
+***Interpolation'da Script/HTML Kodları Çalıştırılabilir mi?***
+- Angular, Interpolation ile DOM'a ekleyeceği içeriği her şeyden önce sterilize ederek Cross-Site Scripting Security Bugs(XSS) hatalarınaa karşı bir önlem alır. Bu yüzden Interpolation ile gelen Script veya HTML kodları handle edilmeksizin oldukları gibi (metinsel olarak) yansıtılırlar.
+
+*** Ekstradan Interpolation İle Kullanılan Operatörler ***
+- Pipes
+- Nullable operatörü (?)
+- Non-Null Assertion operatörü
