@@ -1,0 +1,36 @@
+Angular Eğitimi #7 - Custom Directive Nasıl Oluşturulur?
+
+*** Directive Oluşturma ***
+terminale => 
+1-ng g d directives/example
+2-ng generate directive directives/example
+
+- Bir directive oluşturulduğu zaman ana modüle declare edilmelidir.(Modül kaldırıldıysa gerek yok)
+
+- Bir directive'in sınıf adının sonunda Directive olması isimsel bir kültürdür. Zorunlu değildir.
+
+- Ama bir directive'in directive olabilmesi için @Directive decorator'ı tarafından işaretlenmiş olması gerekmektedir.
+
+- selector özelliği köşeli parantez içerisinde yazılıyorsa bu attribute olarak kullanılacağı anlamına gelmektedir. Yok eğer . ile yazılıyorsa bu da class olarak ilgili directive'in kullanılacağı anlamına gelmektedir.
+
+- [appExample] ise direk appExample olarak kullanırım. (Bu daha çok kullanılır.)
+
+- .appExample ise class="appExample" olarak kullanırım.
+
+*** Directive İle İşaretlenmiş HTML Nesnesini Elde Etme ***
+
+
+*** JQUERY'den faydalanmak için ***
+-> npm i jquery (nodeModule içine dosyalar yüklenmiş olacak)
+
+** directive dosyama gelip 
+declare var $:any; => yazdığım zamanda tanımlamış olurum.
+
+*** Directive'e Parametre Tanımlama ***
+- Directive üzerinde parametre tanımlayabilmek için Input Field tanımlamak yeterlidir.
+
+*** HostListener ***
+- Oluşturulan directive'in hangi event ile görevlendirileceğini belirlememizi sağlayan bir decoratordur.
+
+*** HostBinding ***
+- Directive'in işaretlediği DOM nesnesinin bir özelliğine bind olarak işlemler gerçekleştirebiliyoruz.
